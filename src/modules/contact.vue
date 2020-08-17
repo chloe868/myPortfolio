@@ -73,7 +73,7 @@
       height: 100%;
     }
     .card {
-      margin-top: -11%;
+      margin-top: 3%;
     }
     .marginForm[data-v-2a19d6cf] {
       margin-top: 0px;
