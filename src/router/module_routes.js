@@ -1,0 +1,21 @@
+let beforeEnter = (to, from, next) => {
+    next()
+}
+var devRoutes = []
+let app = require('./app.js')
+devRoutes = devRoutes.concat(app.default.routes)
+for(let x = 0; x < devRoutes.length; x++) {
+    devRoutes[x]['beforeEnter'] = beforeEnter
+}
+let routes = [
+    {
+        path: '/',
+        name: 'home',
+        component: resolve => require(['@/modules/aboutMe.vue'], resolve),
+        beforeEnter : beforeEnter
+    }
+]
+routes = routes.concat(devRoutes)
+export default{
+    routes: routes
+}
